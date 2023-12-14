@@ -1,3 +1,82 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  background: linear-gradient(to right, #080808, #2e2e2e);
+  height: 100vh;
+}
+.header{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: left;
+  height: 20%;
+  width: 70%;
+}
+.headerH{
+  color: white;
+  font-size: 80px;
+  font-weight: 500;
+  font-family: 'Bebas Neue', sans-serif;
+  margin-bottom: 0;
+  text-decoration: underline;
+  text-decoration-color: rgb(255, 0, 0);
+}
+.headerP{
+  color: white;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.body{
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mainDiv{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.inputDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  margin-bottom: 5%;
+}
+.weatherDiv{
+  outline: dashed 2px blue;
+  width: 70%;
+  height: 40%;
+}
+input{
+  font-size: 30px;
+  width: 90%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+button{
+  font-size: 25px;
+  height: 100%;
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  transition: transform 0.3s ease;
+}
+button:hover{
+  cursor: pointer;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  transform: scale(1.1);
 }

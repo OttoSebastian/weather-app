@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { IoIosSearch } from "react-icons/io";
 
 export default function WeatherBox() {
 
@@ -12,7 +13,7 @@ export default function WeatherBox() {
         const fetchData = async () => {
             const response = await fetch(apiUrl, {
             headers: {
-                'X-Api-Key': apiKey,
+                'X-Api-Key': apiKey
             }
             });
 
@@ -23,15 +24,23 @@ export default function WeatherBox() {
     };
 
   return (
-    <div>
-        <input 
-            placeholder='Enter a city...'
-            onChange={(e) => {
-            setCity(e.target.value);
-            }}
-        />
-        <button onClick={startFetching}>Get weather</button>
-        <h1>Temperature: {data?.temp}°C</h1>
-    </div>
+    <>
+        <div className='mainDiv'>
+            <div className='inputDiv'>
+                <input
+                    placeholder='Enter a city...'
+                    onChange={(e) => {
+                    setCity(e.target.value);
+                    }}
+                />
+                <button onClick={startFetching}>{<IoIosSearch style={{fontSize: "30px"}}/>} Search</button>
+            </div>
+            <div className='weatherDiv'>
+                <h1>Current: {data?.temp}°C</h1>
+                <h1>Lowest: {data?.min_temp}°C</h1>
+                <h1>Highest: {data?.max_temp}°C</h1>
+            </div>
+        </div>
+    </>
   )
 }
