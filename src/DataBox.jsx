@@ -3,7 +3,7 @@ import { IoIosSunny, IoIosPartlySunny, IoIosCloudy } from "react-icons/io";
 import { FaTemperatureArrowUp, FaTemperatureArrowDown, FaHandHoldingDroplet } from "react-icons/fa6";
 import { IoWater } from "react-icons/io5";
 
-export default function DataBox({temperature, clouds, maxTemp, minTemp, feelsLike, humidity, chosenCity}) {
+export default function DataBox({temperature, clouds, maxTemp, minTemp, feelsLike, humidity}) {
 
   const sunny = {
     fontSize: "200px",
