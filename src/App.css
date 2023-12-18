@@ -53,9 +53,13 @@
   margin-bottom: 5%;
 }
 .weatherDiv{
-  outline: dashed 2px blue;
+  /* outline: dashed 2px blue; */
   width: 70%;
-  height: 40%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3%;
 }
 input{
   font-size: 30px;
@@ -79,4 +83,45 @@ button:hover{
   background-color: rgb(255, 0, 0);
   color: white;
   transform: scale(1.1);
+}
+.weather{
+  /* outline: dashed 2px red; */
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  /* background-color: #2e2e2e; */
+  box-shadow: 0 0 20px rgb(68, 68, 68);
+  border-radius: 10%;
+}
+.temperature{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 100%;
+  /* outline: dashed 2px red; */
+  margin-right: 2%;
+}
+.details{
+  /* outline: dashed 2px yellow; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+}
+.detailItem{
+  /* outline: dashed 2px orange; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  color: white;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 100;
+  font-size: 30px;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }

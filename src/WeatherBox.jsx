@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { IoIosSearch } from "react-icons/io";
+import DataBox from './DataBox';
 
 export default function WeatherBox() {
 
@@ -21,6 +22,7 @@ export default function WeatherBox() {
         setData(result);
         };
         fetchData();
+        console.log(data)
     };
 
   return (
@@ -36,9 +38,16 @@ export default function WeatherBox() {
                 <button onClick={startFetching}>{<IoIosSearch style={{fontSize: "30px"}}/>} Search</button>
             </div>
             <div className='weatherDiv'>
-                <h1>Current: {data?.temp}°C</h1>
-                <h1>Lowest: {data?.min_temp}°C</h1>
-                <h1>Highest: {data?.max_temp}°C</h1>
+                {data?.temp &&
+                    <DataBox 
+                        temperature={data.temp} 
+                        clouds={data.cloud_pct}
+                        maxTemp={data.max_temp}
+                        minTemp={data.min_temp}
+                        feelsLike={data.feels_like}
+                        humidity={data.humidity}
+                    />
+                }
             </div>
         </div>
     </>
