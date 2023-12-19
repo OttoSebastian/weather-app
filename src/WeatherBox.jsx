@@ -22,7 +22,6 @@ export default function WeatherBox() {
         setData(result);
         };
         fetchData();
-        console.log(data)
     };
 
   return (
