@@ -1,49 +1,27 @@
 import React from 'react';
-import { IoIosSunny, IoIosPartlySunny, IoIosCloudy } from "react-icons/io";
-import { FaTemperatureArrowUp, FaTemperatureArrowDown, FaHandHoldingDroplet } from "react-icons/fa6";
-import { IoWater } from "react-icons/io5";
+//Images
+import Sunny from "./pictures/sun.svg";
+import PartlySunny from "./pictures/partlysunny.svg";
+import Cloudy from "./pictures/cloudy.svg";
+import MaxTemp from "./pictures/maxtemp.svg";
+import MinTemp from "./pictures/mintemp.svg";
+import Hand from "./pictures/hand.svg";
+import Humidity from "./pictures/humidity.svg";
 
 export default function DataBox({temperature, clouds, maxTemp, minTemp, feelsLike, humidity}) {
 
-  const sunny = {
-    fontSize: "200px",
-    color: "yellow",
-    marginRight: "10%",
-  }
-  const partlySunny = {
-    fontSize: "200px",
-    color: "burlywood",
-    marginRight: "10%",
-  }
-  const cloudy = {
-    fontSize: "200px",
-    color: "grey",
-    marginRight: "10%",
+  const weatherImageStyle = {
+    width: "8rem",
+    marginRight: "2rem",
   }
   const tempStyle = {
     fontSize: "70px",
     color: "white",
     fontWeight: "200"
   }
-  const max = {
-    fontSize: "50",
-    color: "red",
-    marginRight: "5%"
-  }
-  const min = {
-    fontSize: "50",
-    color: "blue",
-    marginRight: "5%"
-  }
-  const feel = {
-    fontSize: "50",
-    color: "khaki",
-    marginRight: "5%"
-  }
-  const humid = {
-    fontSize: "50",
-    color: "aqua",
-    marginRight: "5%"
+  const additionalWeatherStyle = {
+    width: "3rem",
+    marginRight: "1rem"
   }
   const header = {
     fontSize: "50px",
@@ -65,27 +43,27 @@ export default function DataBox({temperature, clouds, maxTemp, minTemp, feelsLik
           Weather now
         </div>
         <div style={info}>
-          {clouds <= 25 && <IoIosSunny style={sunny}/>}
-          {(clouds > 25 && clouds <= 65) && <IoIosPartlySunny style={partlySunny}/>}
-          {clouds > 65 && <IoIosCloudy style={cloudy}/>}
+          {clouds <= 25 && <img src={Sunny} alt='sunny' style={weatherImageStyle}/>}
+          {(clouds > 25 && clouds <= 65) && <img src={PartlySunny} alt='partlysunny' style={weatherImageStyle}/>}
+          {clouds > 65 && <img src={Cloudy} alt='cloudy' style={weatherImageStyle}/>}
           <h1 style={tempStyle}>{temperature}°C</h1>
         </div>
       </div>
       <div className='details'>
         <div className='detailItem'>
-          <FaTemperatureArrowUp style={max}/>
+          <img src={MaxTemp} alt="maxtemp" style={additionalWeatherStyle}/>
           Max temp {maxTemp}°C
         </div>
         <div className='detailItem'>
-          <FaTemperatureArrowDown style={min}/>
+          <img src={MinTemp} alt="mintemp" style={additionalWeatherStyle}/>
           Min temp {minTemp}°C
         </div>
         <div className='detailItem'>
-          <FaHandHoldingDroplet style={feel}/>
+          <img src={Hand} alt="feelslike" style={additionalWeatherStyle}/>
           Feels like {feelsLike}°C
         </div>
         <div className='detailItem'>
-          <IoWater style={humid}/>
+          <img src={Humidity} alt="humidity" style={additionalWeatherStyle}/>
           Humidity {humidity}%
         </div>
       </div>
